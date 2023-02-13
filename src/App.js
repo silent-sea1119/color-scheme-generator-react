@@ -23,7 +23,7 @@ function App() {
     try {
       fetch(`https://www.thecolorapi.com/scheme?hex=${selectedColor.slice(1)}&mode=${selectedScheme}&count=${numColors}`)
         .then((response) => response.json())
-        .then((data) =>console.log(data.colors))
+        .then((data) =>setSchemeColors((prevSchemeColors) => data.colors))
     } catch (error) {
       console.log(error)
     }
@@ -33,6 +33,7 @@ function App() {
     fetchSchemeColors()
   }, [schemeData])
 
+  console.log(schemeColors)
   function toggleMode() {
     mode === "light" ? setMode((prevMode) => "dark") : setMode((prevMode) => "light")
   }
