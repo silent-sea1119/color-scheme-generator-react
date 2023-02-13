@@ -48,6 +48,12 @@ function App() {
     return storedSchemes || [];
   }
 
+  function handleDeleteClick(selectedScheme) {
+    setSavedSchemes((prevSavedSchemes) => 
+      {return prevSavedSchemes.filter((scheme) => scheme !== selectedScheme)}
+    )
+  }
+
   useEffect(() => {
     const stringifiedSchemes = JSON.stringify(savedSchemes);
     localStorage.setItem("savedSchemes", stringifiedSchemes);
@@ -75,7 +81,7 @@ function App() {
       <button id="save-btn" className="btn save-btn" onClick={handleSaveSchemeClick}>
         Save Color Scheme
       </button>
-      <SavedColors savedSchemes={savedSchemes}/>
+      <SavedColors savedSchemes={savedSchemes} handleDeleteClick={handleDeleteClick}/>
     </div>
   );
 }
