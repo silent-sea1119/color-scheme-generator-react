@@ -6,7 +6,7 @@ function App() {
     selectedScheme: "monochrome",
     numColors: 5
   })
-  const [isDark, setIsDark] = useState(false)
+  const [mode, setMode] = useState("light")
 
   function handleChange(e) {
     const {name, value} = e.target;
@@ -18,9 +18,13 @@ function App() {
 
     console.log(schemeData)
   }
+
+  function toggleMode() {
+    mode === "light" ? setMode((prevMode) => "dark") : setMode((prevMode) => "light")
+  }
   return (
-    <div className="App">
-      <Header schemeData={schemeData} handleChange={handleChange}/>
+    <div className={`App ${mode}`}>
+      <Header schemeData={schemeData} handleChange={handleChange} toggleMode={toggleMode} mode={mode}/>
     </div>
   );
 }
