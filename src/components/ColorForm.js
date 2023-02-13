@@ -14,7 +14,7 @@ function ColorForm({ schemeData, handleChange }) {
         value={schemeData.selectedColor}
         onChange={handleChange}
       />
-      <label htmlFor="scheme-select" className="visually-hidden">
+      <label htmlFor="selectedScheme" className="visually-hidden">
         choose a color scheme
       </label>
       <select
@@ -33,7 +33,7 @@ function ColorForm({ schemeData, handleChange }) {
         <option value="triad">Triad</option>
         <option value="quad">Quad</option>
       </select>
-      <label htmlFor="num-select" className="visually-hidden">
+      <label htmlFor="numColors" className="visually-hidden">
         how many colors in scheme
       </label>
       <select

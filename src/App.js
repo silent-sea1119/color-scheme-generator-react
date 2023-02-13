@@ -6,6 +6,7 @@ function App() {
     selectedScheme: "monochrome",
     numColors: 5
   })
+  const [isDark, setIsDark] = useState(false)
 
   function handleChange(e) {
     const {name, value} = e.target;

@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+:root {
+  --darkGrey: #313638;
+  --lightGrey: #CCCCCC;
+}
+
+/* Grouping frequently used properties */
+.scheme,
+.num-colors,
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+/* General styling for body */
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--lightGrey);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Formatting for header */
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  margin: 0;
+  margin-top: 1rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+/* Formatting for selects container */
+.selects {
+  width: 100%;
+  padding: 0.5em 0 1.56em 0;
+  display: flex;
+  justify-content: space-around;
+}
+.color-form {
+    display:flex;
+}
+.color-input {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.2em;
+  border: 0.08em solid var(--darkGrey);
+  background-color: var(--lightGrey);
+}
+
+.scheme-select {
+  border-right: none;
+}
+
+.num-select {
+  border-left: none;
+  border-right: none;
+}
+
+.light-btn {
+  border-left: 0;
+  border-right: 0;
+}
+
+.dark-button {
+  border-left: none;
+}
+
+select {
+  width: 30vw;
+  border: 0.08em solid var(--darkGrey);
+  background-color: var(--lightGrey)
+}
+
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+  border: 0.15em solid var(--darkGrey);
+}
+
+/* Formatting for element that displays entire scheme */
+.color-scheme {
+  width: 100vw;
+  display: flex;
+}
+
+/* Formatting for each color */
+.color {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Formatting for visible "bar" of color */
+.color-bar {
+  margin: 0;
+  width: 100%;
+  height: 40vh;
+}
+
+/* Formatting for hex value */
+.hex,
+.hex-small {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 0.625rem;
+  cursor: pointer;
+}
+
+.hex:hover,
+.hex:focus,
+.hex-small:hover,
+.hex-small:focus {
+  text-decoration: underline;
+}
+
+/* Formatting for text that appears when hex is copied */
+.hex-copied {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+/* Formatting for all button elements */
+.btn {
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.5em 0.75em;
+  border: 0.08em solid var(--darkGrey);
+  background-color: var(--lightGrey);
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn:hover,
+.btn:focus {
+  box-sizing: border-box;
+  border: 0.15em solid var(--darkGrey);
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* Formatting for saved schemes section */
+.schemes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0;
+  list-style: none;
+}
+
+.saved-scheme {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Formatting for individual saved colors */
+.saved-colors {
+  display: flex;
+}
+
+.saved-color {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Formatting for small square color swatch */
+.color-square {
+  height: 20vw;
+}
+
+li {
+  list-style: none;
+}
+
+.dark {
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
+}
+
+/* Formatting for light and dark mode buttons */
+.dark-btn,
+.dark-select {
+  border: 0.08em solid var(--lightGrey);
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
+  box-sizing: border-box;
+}
+
+.dark-btn:hover,
+.dark-btn:focus,
+.dark-select:hover,
+.dark-select:focus {
+  box-sizing: border-box;
+  border: 0.15em solid var(--lightGrey);
+}
+
+.mode-btn {
+  height: 100%;
+  margin: 0;
+}
+
+.save-btn,
+.delete-btn {
+  margin-top: 0.5em;
+}
+
+.disabled {
+  background-color: darkgray;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Media queries for responsive styling */
+@media (min-width: 500px) {
+  .num-select {
+    width: 20vw;
+  }
+
+  .color-scheme {
+    width: 70vw;
+  }
+
+  header {
+    margin: 0 auto;
+  }
+
+  .hex,
+  .hex-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    font-size: 1rem;
+  }
+
+  .dark-hex {
+    color: var(--darkGrey);
+  }
+  .hex-copied {
+    font-size: 1rem;
+  }
+
+  .btn {
+    margin: 0 auto;
+    width: 15em;
+  }
+
+  .save-btn,
+  .delete-btn {
+    margin-top: 0.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  .color-scheme {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .color {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .color-bar {
+    margin: 0;
+    width: 80vw;
+    height: 40px;
+  }
+
+  .hex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 20vw;
+    height: 100%;
+  }
+  .color-input {
+    min-width: 2em;
+  }
+
+  .scheme-select {
+    max-width: 8em;
+  }
+
+  .btn {
+    padding: 0.25em 0.37em;
+  }
+
+  .mode-btn {
+    height: 100%;
+    margin: 0;
+  }
+}
