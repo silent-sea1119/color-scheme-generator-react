@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import Header from "./components/Header";
 function App() {
+  const [schemeColors, setSchemeColors] = useState([])
   const [schemeData, setSchemeData] = useState({
     selectedColor: "#FFDB58",
     selectedScheme: "monochrome",
@@ -15,9 +16,22 @@ function App() {
       ...schemeData,
       [name]: value,
     })
-
-    console.log(schemeData)
   }
+
+  function fetchSchemeColors() {
+    const {selectedColor, selectedScheme, numColors} = schemeData
+    try {
+      fetch(`https://www.thecolorapi.com/scheme?hex=${selectedColor.slice(1)}&mode=${selectedScheme}&count=${numColors}`)
+        .then((response) => response.json())
+        .then((data) =>console.log(data.colors))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchSchemeColors()
+  }, [schemeData])
 
   function toggleMode() {
     mode === "light" ? setMode((prevMode) => "dark") : setMode((prevMode) => "light")
