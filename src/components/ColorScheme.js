@@ -1,7 +1,13 @@
-import "./ColorScheme,css";
+import Color from "./Color.js";
+import "./ColorScheme.css";
 
-function ColorScheme() {
-  return <section className="color-scheme">color scheme here</section>;
+import { nanoid } from "nanoid";
+
+function ColorScheme({ schemeColors }) {
+  const colorScheme = schemeColors.map((color) => (
+    <Color color={color} key={nanoid()} />
+  ));
+  return <section className="color-scheme">{colorScheme}</section>;
 }
 
 export default ColorScheme;

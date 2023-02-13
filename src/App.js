@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import Header from "./components/Header";
+import ColorScheme from "./components/ColorScheme";
 function App() {
   const [schemeColors, setSchemeColors] = useState([])
   const [schemeData, setSchemeData] = useState({
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className={`App ${mode}`}>
       <Header schemeData={schemeData} handleChange={handleChange} toggleMode={toggleMode} mode={mode}/>
+      <ColorScheme schemeColors={schemeColors}/>
     </div>
   );
 }
