@@ -1,11 +1,10 @@
 import Color from "./Color.js";
 import "./ColorScheme.css";
 
-import { nanoid } from "nanoid";
+function ColorScheme({ schemeColors}) {
 
-function ColorScheme({ schemeColors }) {
-  const colorScheme = schemeColors.map((color) => (
-    <Color color={color} key={nanoid()} />
+  const colorScheme = schemeColors.map((color, index) => (
+    <Color color={color} key={index} />
   ));
   return <section className="color-scheme">{colorScheme}</section>;
 }

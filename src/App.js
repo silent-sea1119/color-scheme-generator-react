@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import ColorScheme from "./components/ColorScheme";
+import SavedColors from "./components/SavedColors";
+
+
 function App() {
   const [schemeColors, setSchemeColors] = useState([]);
   const [schemeData, setSchemeData] = useState({
@@ -36,7 +39,7 @@ function App() {
   }
 
   function handleSaveSchemeClick() {
-    setSavedSchemes((prevSavedSchemes) => [schemeData, ...prevSavedSchemes]);
+    setSavedSchemes((prevSavedSchemes) => [schemeColors, ...prevSavedSchemes]);
   }
 
   function getSavedSchemes() {
@@ -68,10 +71,11 @@ function App() {
         toggleMode={toggleMode}
         mode={mode}
       />
-      <ColorScheme schemeColors={schemeColors} />
+      <ColorScheme schemeColors={schemeColors}/>
       <button id="save-btn" className="btn save-btn" onClick={handleSaveSchemeClick}>
         Save Color Scheme
       </button>
+      <SavedColors savedSchemes={savedSchemes}/>
     </div>
   );
 }
