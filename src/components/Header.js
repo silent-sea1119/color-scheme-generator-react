@@ -2,7 +2,7 @@ import "./Header.css";
 import ColorForm from "./ColorForm";
 function Header({ schemeData, handleChange, toggleMode, mode }) {
   return (
-    <header className="header">
+    <header className={`header ${mode}`}>
       <h1>Color Scheme Generator</h1>
       <section className="selects">
         <ColorForm schemeData={schemeData} handleChange={handleChange} />

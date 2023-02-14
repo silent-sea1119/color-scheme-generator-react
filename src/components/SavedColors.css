@@ -1,0 +1,42 @@
+/* Formatting for saved schemes section */
+.schemes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .saved-scheme {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Formatting for individual saved colors */
+  .saved-colors {
+    display: flex;
+  }
+  
+  .saved-color {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  /* Formatting for small square color swatch */
+  .color-square {
+    height: 20vw;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .dark {
+    background-color: var(--darkGrey);
+    color: var(--lightGrey);
+  }
+  

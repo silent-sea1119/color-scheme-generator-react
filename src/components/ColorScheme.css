@@ -1,0 +1,80 @@
+/* Formatting for element that displays entire scheme */
+.color-scheme {
+  width: 100vw;
+  display: flex;
+}
+
+
+/* Formatting for hex value */
+.hex,
+.hex-small {
+    min-height: 40px;
+  margin: 1em 0;
+  text-align: center;
+  font-size: 0.625rem;
+  cursor: pointer;
+}
+
+.hex:hover,
+.hex:focus,
+.hex-small:hover,
+.hex-small:focus {
+  text-decoration: underline;
+}
+
+/* Formatting for text that appears when hex is copied */
+.hex-copied {
+  text-align: center;
+  font-size: 0.75rem;
+}
+@media (min-width: 500px) {
+  .color-scheme {
+    width: 70vw;
+  }
+
+  .hex,
+  .hex-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    font-size: 1rem;
+  }
+
+  .dark-hex {
+    color: var(--darkGrey);
+  }
+  .hex-copied {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+    .color-scheme {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .color {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    
+      .color-bar {
+        margin: 0;
+        width: 80vw;
+        height: 40px;
+      }
+    
+      .hex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 20vw;
+        height: 100%;
+      }
+}

@@ -1,0 +1,59 @@
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+  }
+    /* Formatting for selects container */
+    .selects {
+        width: 100%;
+        padding: 0.5em 0 1.56em 0;
+        display: flex;
+        justify-content: space-around;
+      }
+      .color-form {
+          display:flex;
+      }
+      .color-input {
+        border-radius: 50%;
+        width: 2.5em;
+        height: 2.5em;
+        padding: 0.2em;
+        border: 0.08em solid var(--darkGrey);
+        background-color: var(--lightGrey);
+      }
+      
+      .scheme-select {
+        border-right: none;
+      }
+      
+      .num-select {
+        border-left: none;
+        border-right: none;
+      }
+      
+      .light-btn {
+        border-left: 0;
+        border-right: 0;
+      }
+      
+      .dark-button {
+        border-left: none;
+      }
+      
+      select {
+        width: 30vw;
+        border: 0.08em solid var(--darkGrey);
+        background-color: var(--lightGrey)
+      }
+      
+      input:hover,
+      input:focus,
+      select:hover,
+      select:focus {
+        border: 0.15em solid var(--darkGrey);
+      }
