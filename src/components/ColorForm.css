@@ -8,6 +8,8 @@
     border: 0;
     overflow: hidden;
   }
+
+
     /* Formatting for selects container */
     .selects {
         width: 100%;
@@ -36,14 +38,6 @@
         border-right: none;
       }
       
-      .light-btn {
-        border-left: 0;
-        border-right: 0;
-      }
-      
-      .dark-button {
-        border-left: none;
-      }
       
       select {
         width: 30vw;

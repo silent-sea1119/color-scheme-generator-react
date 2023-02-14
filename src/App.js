@@ -70,7 +70,7 @@ function App() {
       : setMode((prevMode) => "light");
   }
   return (
-    <body className={`${mode}`}>
+   <div className={`${mode}`}>
     <Header
     schemeData={schemeData}
     handleChange={handleChange}
@@ -85,7 +85,7 @@ function App() {
       </button>
       <SavedColors savedSchemes={savedSchemes} handleDeleteClick={handleDeleteClick}/>
     </main>
-    </body>
+    </div>
   );
 }
 

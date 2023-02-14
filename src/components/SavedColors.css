@@ -9,7 +9,7 @@
     list-style: none;
   }
   
-  .saved-scheme {
+.saved-scheme {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -25,12 +25,6 @@
     flex-direction: column;
     flex: 1;
   }
-  
-  /* Formatting for small square color swatch */
-  .color-square {
-    height: 20vw;
-  }
-  
   li {
     list-style: none;
   }
@@ -40,3 +34,9 @@
     color: var(--lightGrey);
   }
   
+  @media (min-width: 500px) {
+    .saved-scheme > .color-scheme {
+        width: 100vw;
+        max-height: 20vw;
+    }
+  }
