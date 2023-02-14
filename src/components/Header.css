@@ -48,12 +48,6 @@ header {
   margin-top: 0.5em;
 }
 
-.disabled {
-  background-color: darkgray;
-  color: white;
-  cursor: not-allowed;
-}
-
 /* Media queries for responsive styling */
 @media (min-width: 500px) {
     .num-select {

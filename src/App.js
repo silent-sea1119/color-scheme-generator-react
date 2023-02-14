@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import ColorScheme from "./components/ColorScheme";
 import SavedColors from "./components/SavedColors";
 
-
 function App() {
   const [schemeColors, setSchemeColors] = useState([]);
   const [schemeData, setSchemeData] = useState({
@@ -13,6 +12,8 @@ function App() {
   });
   const [savedSchemes, setSavedSchemes] = useState(getSavedSchemes());
   const [mode, setMode] = useState("light");
+  const [copied, setCodpied] = useState(false);
+  const [copiedColor, setCopiedColor] = useState("")
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -49,9 +50,9 @@ function App() {
   }
 
   function handleDeleteClick(selectedScheme) {
-    setSavedSchemes((prevSavedSchemes) => 
-      {return prevSavedSchemes.filter((scheme) => scheme !== selectedScheme)}
-    )
+    setSavedSchemes((prevSavedSchemes) => {
+      return prevSavedSchemes.filter((scheme) => scheme !== selectedScheme);
+    });
   }
 
   useEffect(() => {
@@ -61,30 +62,54 @@ function App() {
 
   useEffect(() => {
     fetchSchemeColors();
-  }, [schemeData]);
-
+    document.body.className = mode;
+  }, [schemeData, mode]);
 
   function toggleMode() {
     mode === "light"
       ? setMode((prevMode) => "dark")
       : setMode((prevMode) => "light");
   }
-  return (
-   <div className={`${mode}`}>
-    <Header
-    schemeData={schemeData}
-    handleChange={handleChange}
-    toggleMode={toggleMode}
-    mode={mode}
-  />
-    <main className={`App ${mode}`}>
 
-      <ColorScheme schemeColors={schemeColors}/>
-      <button id="save-btn" className="btn save-btn" onClick={handleSaveSchemeClick}>
-        Save Color Scheme
-      </button>
-      <SavedColors savedSchemes={savedSchemes} handleDeleteClick={handleDeleteClick}/>
-    </main>
+  function handleCopyHex(hexToCopy) {
+    navigator.clipboard.writeText(hexToCopy);
+    setCodpied((prevCopied) => !prevCopied);
+    setCopiedColor((prevCopiedColor) => hexToCopy)
+    setTimeout(()=> {
+      setCodpied((prevCopied) => !prevCopied)
+      setCopiedColor((prevCopiedColor) => "")
+    }, 3000)
+  }
+  return (
+    <div className={`${mode}`}>
+      <Header
+        schemeData={schemeData}
+        handleChange={handleChange}
+        toggleMode={toggleMode}
+        mode={mode}
+      />
+      <main className={`App ${mode}`}>
+        <ColorScheme
+          schemeColors={schemeColors}
+          handleCopyHex={handleCopyHex}
+          copied={copied}
+          copiedColor={copiedColor}
+        />
+        <button
+          id="save-btn"
+          className="btn save-btn"
+          onClick={handleSaveSchemeClick}
+        >
+          Save Color Scheme
+        </button>
+        <SavedColors
+          savedSchemes={savedSchemes}
+          handleDeleteClick={handleDeleteClick}
+          copied={copied}
+          copiedColor={copiedColor}
+          handleCopyHex={handleCopyHex}
+        />
+      </main>
     </div>
   );
 }

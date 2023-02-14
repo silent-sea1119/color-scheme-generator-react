@@ -1,15 +1,24 @@
 import "./Color.css";
 
-function Color({ color }) {
+function Color({ color, handleCopyHex, copied, copiedColor }) {
   return (
     <section className="color">
       <div
         className="color-bar"
         style={{ backgroundColor: color.hex.value }}
-      ></div>
+        onClick={() => {
+          handleCopyHex(color.hex.value);
+        }}
+      >
+        {copied && color.hex.value === copiedColor
+          ? `${color.hex.value} copied to clipboard`
+          : null}
+      </div>
       <div
-        id="hex"
         className="hex"
+        onClick={() => {
+          handleCopyHex(color.hex.value);
+        }}
         style={{
           backgroundColor: color.hex.value,
           opacity: "90%",

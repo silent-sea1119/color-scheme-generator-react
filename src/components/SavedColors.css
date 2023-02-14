@@ -37,6 +37,6 @@
   @media (min-width: 500px) {
     .saved-scheme > .color-scheme {
         width: 100vw;
-        max-height: 20vw;
+        max-height: 30vw;
     }
   }
