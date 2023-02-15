@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Header from "./components/Header";
 import ColorScheme from "./components/ColorScheme";
 import SavedColors from "./components/SavedColors";
@@ -24,7 +24,7 @@ function App() {
     });
   }
 
-  function fetchSchemeColors() {
+const fetchSchemeColors = useCallback(() =>   {
     const { selectedColor, selectedScheme, numColors } = schemeData;
     try {
       fetch(
@@ -37,7 +37,7 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  }
+  }, [schemeData])
 
   function handleSaveSchemeClick() {
     setSavedSchemes((prevSavedSchemes) => [schemeColors, ...prevSavedSchemes]);
