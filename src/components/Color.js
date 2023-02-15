@@ -1,16 +1,6 @@
 import "./Color.css";
 
-function Color({ color, handleCopyHex, copied, copiedColor, id }) {
-  function renderCopiedMessage() {
-    if (id && copied && color.hex.value === copiedColor) {
-      return `${color.hex.value} copied to clipboard`;
-    } else if (!id && copied && color.hex.value === copiedColor) {
-      return `${color.hex.value} copied to clipboard`;
-    } else {
-      return null;
-    }
-  }
-  const copiedMessage = renderCopiedMessage();
+function Color({ color, handleCopyHex, copied, copiedColor }) {
   return (
     <section className="color">
       <div
@@ -20,7 +10,9 @@ function Color({ color, handleCopyHex, copied, copiedColor, id }) {
           handleCopyHex(color.hex.value);
         }}
       >
-        {copiedMessage}
+        {copied && color.hex.value === copiedColor
+          ? `${color.hex.value} copied to clipboard`
+          : null}
       </div>
       <div
         className="hex"

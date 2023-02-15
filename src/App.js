@@ -78,7 +78,7 @@ const fetchSchemeColors = useCallback(() =>   {
     setTimeout(()=> {
       setCodpied((prevCopied) => !prevCopied)
       setCopiedColor((prevCopiedColor) => "")
-    }, 3000)
+    }, 1500)
   }
   return (
     <div className={`${mode}`}>
