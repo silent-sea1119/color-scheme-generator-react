@@ -1,6 +1,5 @@
 /* Formatting for header */
 header {
-    width: 100%;
     position:relative;
     display: flex;
     flex-direction: column;
@@ -55,7 +54,7 @@ header {
     }
   
     header {
-      margin: 0 auto;
+      margin: 0;
     }
 }
   

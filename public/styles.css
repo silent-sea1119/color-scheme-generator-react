@@ -4,6 +4,16 @@
   --darkGrey: #313638;
   --lightGrey: #cccccc;
 }
+* {
+  overflow: hidden;
+}
+.dark {
+  background-color: var(--darkGrey);
+}
+
+.light {
+  background-color: var(--lightGrey);
+}
 
 /* Grouping frequently used properties */
 .scheme,
@@ -17,7 +27,7 @@ body {
 
 body,
 main {
-  width: 100vw;
+  /* width: 100vw; */
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -29,7 +39,7 @@ main {
 /* Formatting for all button elements */
 .btn {
   width: 100%;
-  margin-top: 0.5em;
+  margin: 0.5em 0 0 0;
   padding: 0.5em 0.75em;
   border: 0.08em solid var(--darkGrey);
   background-color: var(--lightGrey);
@@ -46,6 +56,14 @@ main {
   box-sizing: border-box;
 }
 
+.copied-message {
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+}
+
 /* Media queries for responsive styling */
 @media (min-width: 500px) {
   .btn {
@@ -53,10 +71,7 @@ main {
     width: 15em;
   }
 
-  .save-btn,
-  .delete-btn {
-    margin-top: 0.5em;
-  }
+
 }
 
 @media (max-width: 500px) {

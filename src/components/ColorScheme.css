@@ -29,7 +29,7 @@
 }
 @media (min-width: 500px) {
   .color-scheme {
-    width: 70vw;
+    width: 100vw;
   }
 
   .hex,

@@ -1,6 +1,6 @@
 import "./Color.css";
 
-function Color({ color, handleCopyHex, copied, copiedColor }) {
+function Color({ color, handleCopyHex}) {
   return (
     <section className="color">
       <div
@@ -10,9 +10,6 @@ function Color({ color, handleCopyHex, copied, copiedColor }) {
           handleCopyHex(color.hex.value);
         }}
       >
-        {copied && color.hex.value === copiedColor
-          ? `${color.hex.value} copied to clipboard`
-          : null}
       </div>
       <div
         className="hex"

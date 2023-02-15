@@ -12,9 +12,7 @@ function App() {
   });
   const [savedSchemes, setSavedSchemes] = useState(getSavedSchemes());
   const [mode, setMode] = useState("light");
-  const [copied, setCodpied] = useState(false);
-  const [copiedColor, setCopiedColor] = useState("")
-
+  const [copied, setCodpied] = useState(false);  
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -74,13 +72,13 @@ const fetchSchemeColors = useCallback(() =>   {
   function handleCopyHex(hexToCopy) {
     navigator.clipboard.writeText(hexToCopy);
     setCodpied((prevCopied) => !prevCopied);
-    setCopiedColor((prevCopiedColor) => hexToCopy)
     setTimeout(()=> {
       setCodpied((prevCopied) => !prevCopied)
-      setCopiedColor((prevCopiedColor) => "")
     }, 1500)
   }
-  return (
+
+  const borderStyle = mode === 'dark' ?{ border: "0.1em solid #cccccc"} : {border: "0.1em solid #313638"}
+  return ( 
     <div className={`${mode}`}>
       <Header
         schemeData={schemeData}
@@ -93,7 +91,6 @@ const fetchSchemeColors = useCallback(() =>   {
           schemeColors={schemeColors}
           handleCopyHex={handleCopyHex}
           copied={copied}
-          copiedColor={copiedColor}
         />
         <button
           id="save-btn"
@@ -106,10 +103,12 @@ const fetchSchemeColors = useCallback(() =>   {
           savedSchemes={savedSchemes}
           handleDeleteClick={handleDeleteClick}
           copied={copied}
-          copiedColor={copiedColor}
           handleCopyHex={handleCopyHex}
         />
       </main>
+      {copied &&  <div className={`copied-message ${mode}`} style={borderStyle}>
+ Color copied to clipboard
+      </div>}
     </div>
   );
 }
