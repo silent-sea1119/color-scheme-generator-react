@@ -12,7 +12,7 @@ function App() {
   });
   const [savedSchemes, setSavedSchemes] = useState(getSavedSchemes());
   const [mode, setMode] = useState("light");
-  const [copied, setCodpied] = useState(false);  
+  const [copied, setCodpied] = useState(false);
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -22,7 +22,7 @@ function App() {
     });
   }
 
-const fetchSchemeColors = useCallback(() =>   {
+  const fetchSchemeColors = useCallback(() => {
     const { selectedColor, selectedScheme, numColors } = schemeData;
     try {
       fetch(
@@ -35,7 +35,7 @@ const fetchSchemeColors = useCallback(() =>   {
     } catch (error) {
       console.log(error);
     }
-  }, [schemeData])
+  }, [schemeData]);
 
   function handleSaveSchemeClick() {
     setSavedSchemes((prevSavedSchemes) => [schemeColors, ...prevSavedSchemes]);
@@ -72,13 +72,16 @@ const fetchSchemeColors = useCallback(() =>   {
   function handleCopyHex(hexToCopy) {
     navigator.clipboard.writeText(hexToCopy);
     setCodpied((prevCopied) => !prevCopied);
-    setTimeout(()=> {
-      setCodpied((prevCopied) => !prevCopied)
-    }, 1500)
+    setTimeout(() => {
+      setCodpied((prevCopied) => !prevCopied);
+    }, 3000);
   }
 
-  const borderStyle = mode === 'dark' ?{ border: "0.1em solid #cccccc"} : {border: "0.1em solid #313638"}
-  return ( 
+  const borderStyle =
+    mode === "dark"
+      ? { backgroundColor: "#cccccc", color: "#313638" }
+      : { backgroundColor: "#313638", color: "#cccccc" };
+  return (
     <div className={`${mode}`}>
       <Header
         schemeData={schemeData}
@@ -106,9 +109,11 @@ const fetchSchemeColors = useCallback(() =>   {
           handleCopyHex={handleCopyHex}
         />
       </main>
-      {copied &&  <div className={`copied-message ${mode}`} style={borderStyle}>
- Color copied to clipboard
-      </div>}
+      {copied && (
+        <div className={`copied-message ${mode}`} style={borderStyle}>
+          Color copied to clipboard
+        </div>
+      )}
     </div>
   );
 }
