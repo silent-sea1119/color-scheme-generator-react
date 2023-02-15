@@ -63,7 +63,7 @@ function App() {
   useEffect(() => {
     fetchSchemeColors();
     document.body.className = mode;
-  }, [schemeData, mode]);
+  }, [schemeData, mode, fetchSchemeColors]);
 
   function toggleMode() {
     mode === "light"
