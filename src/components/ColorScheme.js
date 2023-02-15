@@ -1,7 +1,12 @@
 import Color from "./Color.js";
 import "./ColorScheme.css";
 
-function ColorScheme({ schemeColors, handleCopyHex, copied, copiedColor }) {
+function ColorScheme({
+  schemeColors,
+  handleCopyHex,
+  copied,
+  copiedColor,
+}) {
   const colorScheme = schemeColors.map((color, index) => (
     <Color
       color={color}
