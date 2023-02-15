@@ -64,9 +64,11 @@ function App() {
   }, [schemeData, mode, fetchSchemeColors]);
 
   function toggleMode() {
-    mode === "light"
-      ? setMode((prevMode) => "dark")
-      : setMode((prevMode) => "light");
+    if (mode === "light") {
+      setMode((prevMode) => "dark");
+    } else {
+      setMode((prevMode) => "light");
+    }
   }
 
   function handleCopyHex(hexToCopy) {
@@ -74,7 +76,7 @@ function App() {
     setCodpied((prevCopied) => !prevCopied);
     setTimeout(() => {
       setCodpied((prevCopied) => !prevCopied);
-    }, 3000);
+    }, 1500);
   }
 
   const borderStyle =
@@ -97,7 +99,7 @@ function App() {
         />
         <button
           id="save-btn"
-          className="btn save-btn"
+          className={`btn save-btn btn-${mode}`}
           onClick={handleSaveSchemeClick}
         >
           Save Color Scheme
@@ -107,6 +109,7 @@ function App() {
           handleDeleteClick={handleDeleteClick}
           copied={copied}
           handleCopyHex={handleCopyHex}
+          mode={mode}
         />
       </main>
       {copied && (

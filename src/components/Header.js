@@ -7,7 +7,7 @@ function Header({ schemeData, handleChange, toggleMode, mode }) {
       <section className="selects">
         <ColorForm schemeData={schemeData} handleChange={handleChange} />
         <button
-          className="mode-btn btn disabled light-btn"
+          className={`btn disabled btn-${mode}`}
           id="light-mode"
           onClick={toggleMode}
         >

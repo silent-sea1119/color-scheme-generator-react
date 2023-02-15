@@ -5,6 +5,7 @@ function SavedColors({
   savedSchemes,
   handleDeleteClick,
   handleCopyHex,
+  mode
 }) {
   const schemes = savedSchemes.map((scheme, index) => (
     <li className="saved-scheme" key={`${index}a`}>
@@ -13,7 +14,7 @@ function SavedColors({
         handleCopyHex={handleCopyHex}
       />
       <button
-        className="delete-btn btn"
+        className={`delete-btn btn btn-${mode}`}
         onClick={() => {
           handleDeleteClick(scheme);
         }}

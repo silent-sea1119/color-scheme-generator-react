@@ -41,19 +41,27 @@ main {
   width: 100%;
   margin: 0.5em 0 0 0;
   padding: 0.5em 0.75em;
-  border: 0.08em solid var(--darkGrey);
-  background-color: var(--lightGrey);
   font-family: "Inter", sans-serif;
   cursor: pointer;
   box-sizing: border-box;
+  border-radius: 0.5em;
+  border: none;
+}
+
+.btn-light{
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
+}
+
+.btn-dark {
+  background-color: var(--lightGrey);
+  color: var(--darkGrey);
 }
 
 .btn:hover,
 .btn:focus {
   box-sizing: border-box;
-  border: 0.15em solid var(--darkGrey);
   font-weight: bold;
-  box-sizing: border-box;
 }
 
 .copied-message {
