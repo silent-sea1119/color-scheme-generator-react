@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
-import Header from "./components/Header";
-import ColorScheme from "./components/ColorScheme";
-import CopiedMessage from "./components/CopiedMessage"
-import SavedColors from "./components/SavedColors";
+import Header from "./components/Header/Header";
+import ColorScheme from "./components/ColorScheme/ColorScheme";
+import CopiedMessage from "./components/CopiedMessage/CopiedMessage"
+import SavedColors from "./components/SavedColors/SavedColors";
 
 import "./App.css";
 

@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import Color from "../Color/Color.js";
 import "./ColorScheme.css";
 
 function ColorScheme({ schemeColors, handleCopyHexClick }) {

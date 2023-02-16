@@ -1,5 +1,5 @@
 import "./Header.css";
-import ColorForm from "./ColorForm";
+import ColorForm from "../ColorForm/ColorForm";
 function Header({ schemeData, handleChange, toggleMode, mode }) {
   // Conditional formatting for button text based on mode stored in state
   const buttonText = mode === "light" ? "Dark Mode" : "Light Mode";

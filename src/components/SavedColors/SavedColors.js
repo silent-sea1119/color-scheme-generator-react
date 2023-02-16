@@ -1,4 +1,4 @@
-import ColorScheme from "./ColorScheme";
+import ColorScheme from "../ColorScheme/ColorScheme";
 import "./SavedColors.css";
 
 function SavedColors({
