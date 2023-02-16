@@ -14,7 +14,7 @@ function SavedColors({
         handleCopyHex={handleCopyHex}
       />
       <button
-        className={`delete-btn btn btn-${mode}`}
+        className={`btn btn-${mode}`}
         onClick={() => {
           handleDeleteClick(scheme);
         }}

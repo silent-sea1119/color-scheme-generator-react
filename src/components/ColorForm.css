@@ -1,53 +1,60 @@
 .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-  }
+  position: absolute;
+  clip-path: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
 
+/* Formatting for selects container */
+.selects {
+  width: 100%;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-around;
+}
+.color-form {
+  display: flex;
+}
+.color-input {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.2em;
+  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
+}
 
-    /* Formatting for selects container */
-    .selects {
-        width: 100%;
-        padding: 0.5em 0 1.56em 0;
-        display: flex;
-        justify-content: space-around;
-      }
-      .color-form {
-          display:flex;
-      }
-      .color-input {
-        border-radius: 50%;
-        width: 2.5em;
-        height: 2.5em;
-        padding: 0.2em;
-        border: 0.08em solid var(--darkGrey);
-        background-color: var(--lightGrey);
-      }
-      
-      .scheme-select {
-        border-right: none;
-      }
-      
-      .num-select {
-        border-left: none;
-        border-right: none;
-      }
-      
-      
-      select {
-        width: 30vw;
-        border: 0.08em solid var(--darkGrey);
-        background-color: var(--lightGrey)
-      }
-      
-      input:hover,
-      input:focus,
-      select:hover,
-      select:focus {
-        border: 0.15em solid var(--darkGrey);
-      }
+.scheme-select {
+  border-radius: 1.5em 0 0 1.5em;
+}
+
+.num-colors {
+  border-radius: 0 1.5em 1.5em 0;
+}
+
+select {
+  width: 30vw;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border: none;
+  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
+}
+
+.select-light {
+  background-color: var(--lightGrey);
+  color: var(--darkGrey);
+}
+.select-dark {
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
+}
+
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+  font-weight: bold;
+}

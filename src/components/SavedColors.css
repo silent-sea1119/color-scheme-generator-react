@@ -29,11 +29,7 @@
     list-style: none;
   }
   
-  .dark {
-    background-color: var(--darkGrey);
-    color: var(--lightGrey);
-  }
-  
+
   @media (min-width: 500px) {
     .saved-scheme > .color-scheme {
         max-height: 30vw;

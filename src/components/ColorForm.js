@@ -1,6 +1,6 @@
 import "./ColorForm.css";
 
-function ColorForm({ schemeData, handleChange }) {
+function ColorForm({ schemeData, handleChange, mode }) {
   return (
     <form className="color-form">
       <label htmlFor="color-input" className="visually-hidden">
@@ -9,7 +9,7 @@ function ColorForm({ schemeData, handleChange }) {
       <input
         type="color"
         id="selectedColor"
-        className="color-input"
+        className={`color-input select-${mode}`}
         name="selectedColor"
         value={schemeData.selectedColor}
         onChange={handleChange}
@@ -20,7 +20,7 @@ function ColorForm({ schemeData, handleChange }) {
       <select
         name="selectedScheme"
         id="selectedScheme"
-        className="scheme-select"
+        className={`scheme-select select-${mode}`}
         value={schemeData.selectedScheme}
         onChange={handleChange}
       >
@@ -39,7 +39,7 @@ function ColorForm({ schemeData, handleChange }) {
       <select
         name="numColors"
         id="numColors"
-        className="num-colors"
+        className={`num-colors select-${mode}`}
         value={schemeData.numColors}
         onChange={handleChange}
       >

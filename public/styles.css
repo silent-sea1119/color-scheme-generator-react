@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
-
 :root {
   --darkGrey: #313638;
   --lightGrey: #cccccc;
@@ -7,17 +6,17 @@
 * {
   overflow-x: hidden;
 }
-.dark {
-  background-color: var(--darkGrey);
+.light {
+  background-color: #d1d1d1;
+  color: var(--darkGrey)
 }
 
-.light {
-  background-color: var(--lightGrey);
+.dark {
+  background-color: #272b2c;
+  color: var(--lightGrey)
 }
 
 /* Grouping frequently used properties */
-.scheme,
-.num-colors,
 body {
   font-family: "Inter", sans-serif;
   font-weight: bold;
@@ -44,17 +43,17 @@ main {
   font-family: "Inter", sans-serif;
   cursor: pointer;
   box-sizing: border-box;
-  border-radius: 0.5em;
+  border-radius: 1.5em;
   border: none;
   box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
 }
 
-.btn-light{
+.btn-dark{
   background-color: var(--darkGrey);
   color: var(--lightGrey);
 }
 
-.btn-dark {
+.btn-light {
   background-color: var(--lightGrey);
   color: var(--darkGrey);
 }
@@ -63,16 +62,6 @@ main {
 .btn:focus {
   box-sizing: border-box;
   font-weight: bold;
-}
-
-.copied-message {
-  position: fixed;
-  bottom: 75%;
-  left: 50%;
-  transform: translate(-50%,0);
-  padding: 0.5em 0.75em;
-  border-radius: 0.5em;
-  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
 }
 
 /* Media queries for responsive styling */
@@ -84,7 +73,6 @@ main {
 
 
 }
-
 @media (max-width: 500px) {
   .btn {
     padding: 0.25em 0.37em;

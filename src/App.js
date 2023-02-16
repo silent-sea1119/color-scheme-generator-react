@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import ColorScheme from "./components/ColorScheme";
 import SavedColors from "./components/SavedColors";
 
+import "./App.css"
+
 function App() {
   const [schemeColors, setSchemeColors] = useState([]);
   const [schemeData, setSchemeData] = useState({
@@ -98,8 +100,7 @@ function App() {
           copied={copied}
         />
         <button
-          id="save-btn"
-          className={`btn save-btn btn-${mode}`}
+          className={`btn btn-${mode}`}
           onClick={handleSaveSchemeClick}
         >
           Save Color Scheme

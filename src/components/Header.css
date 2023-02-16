@@ -17,35 +17,12 @@ header {
     text-align: center;
   }
   
-
-
-
-/* Formatting for light and dark mode buttons */
-.dark-btn,
-.dark-select {
-  border: 0.08em solid var(--lightGrey);
-  background-color: var(--darkGrey);
-  color: var(--lightGrey);
-  box-sizing: border-box;
-}
-
-.dark-btn:hover,
-.dark-btn:focus,
-.dark-select:hover,
-.dark-select:focus {
-  box-sizing: border-box;
-  border: 0.15em solid var(--lightGrey);
-}
-
 .mode-btn {
   height: 100%;
   margin: 0;
 }
 
-.save-btn,
-.delete-btn {
-  margin-top: 0.5em;
-}
+
 
 /* Media queries for responsive styling */
 @media (min-width: 500px) {
@@ -70,6 +47,7 @@ header {
   
     .mode-btn {
       height: 100%;
+      width: 20vw;
       margin: 0;
     }
   }
