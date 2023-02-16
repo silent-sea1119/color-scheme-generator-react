@@ -27,6 +27,9 @@ h1 {
   header {
     margin: 0;
   }
+  .mode-btn {
+    width: 30vw;
+  }
 }
 
 @media (max-width: 500px) {

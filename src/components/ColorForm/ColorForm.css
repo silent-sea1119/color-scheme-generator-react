@@ -74,14 +74,22 @@ select:focus {
   .num-select {
     width: 20vw;
   }
+  .color-input {
+    margin-right: 1em;
+  }
 }
 
 @media (max-width: 500px) {
+
   .color-input {
-    margin-right: 2em;
+    margin-right: 1em;
   }
 
   .scheme-select {
-    max-width: 8em;
+    width: 60vw;
+    max-width: 12em;
+  }
+  .num-colors {
+    width: 12vw;
   }
 }
