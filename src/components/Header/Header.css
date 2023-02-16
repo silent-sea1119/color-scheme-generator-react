@@ -28,7 +28,8 @@ h1 {
     margin: 0;
   }
   .mode-btn {
-    width: 30vw;
+    height: 100%;
+    width: 20vw;
   }
 }
 
