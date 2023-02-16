@@ -39,7 +39,6 @@ main {
 
 /* Formatting for all button elements */
 .btn {
-  width: 100%;
   margin: 0.5em 0;
   padding: 0.5em 0.75em;
   font-family: "Inter", sans-serif;
