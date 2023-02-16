@@ -1,0 +1,11 @@
+
+/* Formatting for the "color copied" message */
+.copied-message {
+    position: fixed;
+    bottom: 75%;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 0.5em 0.75em;
+    border-radius: 1.5em;
+    box-shadow:  var(--box-shadow);
+  }

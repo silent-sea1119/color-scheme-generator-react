@@ -1,44 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+/* Variables */
 :root {
-  --darkGrey: #313638;
-  --lightGrey: #cccccc;
-  --boxShadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  --dark-grey: #313638;
+  --light-bg: #d1d1d1;
+  --light-grey: #cccccc;
+  --box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
 }
+
+/* Global formatting */
 * {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+/* General formatting for light and dark mnsode */
 .light {
   background-color: #d1d1d1;
-  color: var(--darkGrey)
+  color: var(--dark-grey);
 }
 
 .dark {
   background-color: #272b2c;
-  color: var(--lightGrey)
+  color: var(--light-grey);
 }
 
-/* Grouping frequently used properties */
+/* General styling for body and main elements*/
 body {
   font-family: "Inter", sans-serif;
   font-weight: bold;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* General styling for body */
 
 body,
 main {
-  /* width: 100vw; */
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--lightGrey);
+  background-color: var(--light-grey);
 }
 
 /* Formatting for all button elements */
-.btn {
+button {
   margin: 0.5em 0;
   padding: 0.5em 0.75em;
   font-family: "Inter", sans-serif;
@@ -46,35 +51,34 @@ main {
   box-sizing: border-box;
   border-radius: 1.5em;
   border: none;
-  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
 }
 
-.btn-dark{
-  background-color: var(--darkGrey);
-  color: var(--lightGrey);
-}
-
-.btn-light {
-  background-color: var(--lightGrey);
-  color: var(--darkGrey);
-}
-
-.btn:hover,
-.btn:focus {
+button:hover,
+button:focus {
   box-sizing: border-box;
   font-weight: bold;
 }
 
+/* Button formatting for corresponding modes */
+.btn-dark {
+  background-color: var(--dark-grey);
+  color: var(--lightGrey);
+}
+
+.btn-light {
+  background-color: var(--light-grey);
+  color: var(--dark-grey);
+}
+
 /* Media queries for responsive styling */
 @media (min-width: 500px) {
-  .btn {
+  button {
     width: 15em;
   }
-
-
 }
 @media (max-width: 500px) {
-  .btn {
+  button {
     padding: 0.25em 0.37em;
   }
 }

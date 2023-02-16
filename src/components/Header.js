@@ -1,6 +1,7 @@
 import "./Header.css";
 import ColorForm from "./ColorForm";
 function Header({ schemeData, handleChange, toggleMode, mode }) {
+  const buttonText = mode === "light" ? "Dark Mode" : "Light Mode"
   return (
     <header className={`header ${mode}`}>
       <h1>Color Scheme Generator</h1>
@@ -10,8 +11,8 @@ function Header({ schemeData, handleChange, toggleMode, mode }) {
           handleChange={handleChange}
           mode={mode}
         />
-        <button className={`btn btn-${mode} mode-btn`} onClick={toggleMode}>
-          {mode === "light" ? "Dark Mode" : "Light Mode"}
+        <button className={`btn-${mode} mode-btn`} onClick={toggleMode}>
+          {buttonText}
         </button>
       </section>
     </header>

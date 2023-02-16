@@ -1,20 +1,20 @@
 import "./Color.css";
 
-function Color({ color, handleCopyHex}) {
+function Color({ color, handleCopyHexClick}) {
   return (
     <section className="color">
       <div
         className="color-bar"
         style={{ backgroundColor: color.hex.value }}
         onClick={() => {
-          handleCopyHex(color.hex.value);
+          handleCopyHexClick(color.hex.value);
         }}
       >
       </div>
       <div
         className="hex"
         onClick={() => {
-          handleCopyHex(color.hex.value);
+          handleCopyHexClick(color.hex.value);
         }}
         style={{
           backgroundColor: color.hex.value,

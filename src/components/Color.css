@@ -1,14 +1,37 @@
 /* Formatting for each color */
 .color {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Formatting for visible "bar" of color */
+.color-bar {
+  margin: 0;
+  width: 100%;
+  height: 40vh;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .color {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
-  
-  /* Formatting for visible "bar" of color */
+
   .color-bar {
     margin: 0;
-    width: 100%;
-    height: 40vh;
+    width: 80vw;
+    height: 40px;
   }
-  
+
+  .hex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 20vw;
+    height: 100%;
+  }
+}

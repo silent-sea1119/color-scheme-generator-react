@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
+
 import Header from "./components/Header";
 import ColorScheme from "./components/ColorScheme";
+import CopiedMessage from "./components/CopiedMessage"
 import SavedColors from "./components/SavedColors";
 
-import "./App.css"
+import "./App.css";
 
 function App() {
+  // State
   const [schemeColors, setSchemeColors] = useState([]);
   const [schemeData, setSchemeData] = useState({
     selectedColor: "#FFDB58",
@@ -15,6 +18,8 @@ function App() {
   const [savedSchemes, setSavedSchemes] = useState(getSavedSchemes());
   const [mode, setMode] = useState("light");
   const [copied, setCodpied] = useState(false);
+
+  // Change handler for ColorForm
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -24,6 +29,7 @@ function App() {
     });
   }
 
+  // Fetches selected scheme colors based on data stored in state
   const fetchSchemeColors = useCallback(() => {
     const { selectedColor, selectedScheme, numColors } = schemeData;
     try {
@@ -39,32 +45,38 @@ function App() {
     }
   }, [schemeData]);
 
+  //Manages side effects of accessing colors from API
+  useEffect(() => {
+    fetchSchemeColors();
+    document.body.className = mode;
+  }, [schemeData, mode, fetchSchemeColors]);
+
+  // Click handler for saved schemes
   function handleSaveSchemeClick() {
     setSavedSchemes((prevSavedSchemes) => [schemeColors, ...prevSavedSchemes]);
   }
 
+  // Pulls saved schemes from localStorage
   function getSavedSchemes() {
     const stringifiedSchemes = localStorage.getItem("savedSchemes");
     const storedSchemes = JSON.parse(stringifiedSchemes);
     return storedSchemes || [];
   }
 
+  // Manages side effects of saving schemes in localStorage
+  useEffect(() => {
+    const stringifiedSchemes = JSON.stringify(savedSchemes);
+    localStorage.setItem("savedSchemes", stringifiedSchemes);
+  }, [savedSchemes]);
+
+  // CLick handler for deleting schemes from localStorage
   function handleDeleteClick(selectedScheme) {
     setSavedSchemes((prevSavedSchemes) => {
       return prevSavedSchemes.filter((scheme) => scheme !== selectedScheme);
     });
   }
 
-  useEffect(() => {
-    const stringifiedSchemes = JSON.stringify(savedSchemes);
-    localStorage.setItem("savedSchemes", stringifiedSchemes);
-  }, [savedSchemes]);
-
-  useEffect(() => {
-    fetchSchemeColors();
-    document.body.className = mode;
-  }, [schemeData, mode, fetchSchemeColors]);
-
+  // Toggles ligt and darkmode and updates state
   function toggleMode() {
     if (mode === "light") {
       setMode((prevMode) => "dark");
@@ -73,7 +85,8 @@ function App() {
     }
   }
 
-  function handleCopyHex(hexToCopy) {
+  // Click handler for copying hex to clipboard
+  function handleCopyHexClick(hexToCopy) {
     navigator.clipboard.writeText(hexToCopy);
     setCodpied((prevCopied) => !prevCopied);
     setTimeout(() => {
@@ -92,27 +105,22 @@ function App() {
       <main className={`App ${mode}`}>
         <ColorScheme
           schemeColors={schemeColors}
-          handleCopyHex={handleCopyHex}
+          handleCopyHexClick={handleCopyHexClick}
           copied={copied}
         />
-        <button
-          className={`btn btn-${mode}`}
-          onClick={handleSaveSchemeClick}
-        >
+        <button className={`btn-${mode}`} onClick={handleSaveSchemeClick}>
           Save Color Scheme
         </button>
         <SavedColors
           savedSchemes={savedSchemes}
           handleDeleteClick={handleDeleteClick}
           copied={copied}
-          handleCopyHex={handleCopyHex}
+          handleCopyHexClick={handleCopyHexClick}
           mode={mode}
         />
       </main>
       {copied && (
-        <div className={`copied-message ${mode}`}>
-          Color copied to clipboard
-        </div>
+        <CopiedMessage mode={mode} />
       )}
     </div>
   );

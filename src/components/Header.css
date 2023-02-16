@@ -6,7 +6,7 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  box-shadow: var(--boxShadow);
+  box-shadow: var(--box-shadow);
 }
 
 h1 {
@@ -24,24 +24,12 @@ h1 {
 
 /* Media queries for responsive styling */
 @media (min-width: 500px) {
-  .num-select {
-    width: 20vw;
-  }
-
   header {
     margin: 0;
   }
 }
 
 @media (max-width: 500px) {
-  .color-input {
-    min-width: 2em;
-  }
-
-  .scheme-select {
-    max-width: 8em;
-  }
-
   .mode-btn {
     height: 100%;
     width: 20vw;

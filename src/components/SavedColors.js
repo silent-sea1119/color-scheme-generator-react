@@ -4,17 +4,17 @@ import "./SavedColors.css";
 function SavedColors({
   savedSchemes,
   handleDeleteClick,
-  handleCopyHex,
+  handleCopyHexClick,
   mode
 }) {
   const schemes = savedSchemes.map((scheme, index) => (
     <li className="saved-scheme" key={`${index}a`}>
       <ColorScheme
         schemeColors={scheme}
-        handleCopyHex={handleCopyHex}
+        handleCopyHexClick={handleCopyHexClick}
       />
       <button
-        className={`btn btn-${mode}`}
+        className={`btn-${mode}`}
         onClick={() => {
           handleDeleteClick(scheme);
         }}

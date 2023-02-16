@@ -8,7 +8,7 @@ function ColorForm({ schemeData, handleChange, mode }) {
       </label>
       <input
         type="color"
-        id="selectedColor"
+        id="color-input"
         className={`color-input select-${mode}`}
         name="selectedColor"
         value={schemeData.selectedColor}

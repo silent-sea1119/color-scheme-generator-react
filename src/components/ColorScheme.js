@@ -3,13 +3,13 @@ import "./ColorScheme.css";
 
 function ColorScheme({
   schemeColors,
-  handleCopyHex,
+  handleCopyHexClick,
 }) {
   const colorScheme = schemeColors.map((color, index) => (
     <Color
       color={color}
       key={index}
-      handleCopyHex={handleCopyHex}
+      handleCopyHexClick={handleCopyHexClick}
     />
   ));
   return <section className="color-scheme">{colorScheme}</section>;
