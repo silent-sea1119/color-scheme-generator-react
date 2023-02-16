@@ -30,17 +30,14 @@ You will also see any lint errors in the console.
 ## Built With
 
 - JavaScript
-- React
+- LocalStorage
+- React - with hooks!
 - HTML
 - CSS Flexbox
 
-## Future Updates
-
-- [ ] Reliable Storage
-
 ## Author
 
-**Rohit Jain**
+**Amy Posten**
 
 - [Github Profile](https://github.com/aeposten "Amy Posten")
 - [Email](mailto:amy@amyposten.op?subject=Project )
