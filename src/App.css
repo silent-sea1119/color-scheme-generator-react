@@ -1,0 +1,41 @@
+/* Formatting for all button elements */
+button {
+    margin: 0.5em 0;
+    padding: 0.5em 0.75em;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 1.5em;
+    border: none;
+    box-shadow: var(--box-shadow);
+  }
+  
+  button:hover,
+  button:focus {
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  
+  /* Button formatting for corresponding modes */
+  .btn-dark {
+    background-color: var(--dark-grey);
+    color: var(--lightGrey);
+  }
+  
+  .btn-light {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+  }
+  
+  /* Media queries for responsive styling */
+  @media (min-width: 500px) {
+    button {
+      width: 15em;
+    }
+  }
+  @media (max-width: 500px) {
+    button {
+      padding: 0.25em 0.37em;
+    }
+  }
+  

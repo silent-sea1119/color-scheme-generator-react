@@ -21,6 +21,8 @@
 .color-form {
   display: flex;
 }
+
+/* Formatting for color selector */
 .color-input {
   width: 2.5em;
   height: 2.5em;
@@ -31,10 +33,12 @@
   cursor: pointer;
 }
 
-.scheme-select {
-  border-radius: 1.5em 0 0 1.5em;
+.color-input:hover,
+.color-input:focus {
+  border: 0.15em solid var(--dark-grey);
 }
 
+/* Formatting for selects for number of colors and specific scheme */
 .num-colors {
   border-radius: 0 1.5em 1.5em 0;
 }
@@ -56,11 +60,13 @@ select {
   color: var(--light-grey);
 }
 
-input:hover,
-input:focus,
 select:hover,
 select:focus {
   font-weight: bold;
+}
+
+.scheme-select {
+  border-radius: 1.5em 0 0 1.5em;
 }
 
 /* Media queries for responsive styling */

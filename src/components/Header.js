@@ -1,7 +1,8 @@
 import "./Header.css";
 import ColorForm from "./ColorForm";
 function Header({ schemeData, handleChange, toggleMode, mode }) {
-  const buttonText = mode === "light" ? "Dark Mode" : "Light Mode"
+  // Conditional formatting for button text based on mode stored in state
+  const buttonText = mode === "light" ? "Dark Mode" : "Light Mode";
   return (
     <header className={`header ${mode}`}>
       <h1>Color Scheme Generator</h1>

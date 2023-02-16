@@ -30,7 +30,6 @@
     list-style: none;
   }
   
-
   @media (min-width: 500px) {
     .saved-scheme > .color-scheme {
         max-height: 30vw;

@@ -102,7 +102,7 @@ function App() {
         toggleMode={toggleMode}
         mode={mode}
       />
-      <main className={`App ${mode}`}>
+      <main className={`${mode}`}>
         <ColorScheme
           schemeColors={schemeColors}
           handleCopyHexClick={handleCopyHexClick}
@@ -120,7 +120,7 @@ function App() {
         />
       </main>
       {copied && (
-        <CopiedMessage mode={mode} />
+        <CopiedMessage mode={mode} selectedColor={schemeData.selectedColor}/>
       )}
     </div>
   );

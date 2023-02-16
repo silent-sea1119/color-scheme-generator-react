@@ -5,8 +5,9 @@ function SavedColors({
   savedSchemes,
   handleDeleteClick,
   handleCopyHexClick,
-  mode
+  mode,
 }) {
+  // Maps over color schemes stored in state and renders them in ColorScheme components
   const schemes = savedSchemes.map((scheme, index) => (
     <li className="saved-scheme" key={`${index}a`}>
       <ColorScheme

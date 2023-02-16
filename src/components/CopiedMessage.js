@@ -1,8 +1,10 @@
 import "./CopiedMessage.css";
 
-function CopiedMessage({ mode }) {
+function CopiedMessage({ mode, selectedColor }) {
   return (
-    <div className={`copied-message ${mode}`}>Color copied to clipboard</div>
+    <div className={`copied-message ${mode}`}>
+      {selectedColor} copied to clipboard
+    </div>
   );
 }
 
