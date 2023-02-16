@@ -81,10 +81,6 @@ function App() {
     }, 1500);
   }
 
-  const borderStyle =
-    mode === "dark"
-      ? { backgroundColor: "#cccccc", color: "#313638" }
-      : { backgroundColor: "#313638", color: "#cccccc" };
   return (
     <div className={`${mode}`}>
       <Header
@@ -114,7 +110,7 @@ function App() {
         />
       </main>
       {copied && (
-        <div className={`copied-message ${mode}`} style={borderStyle}>
+        <div className={`copied-message ${mode}`}>
           Color copied to clipboard
         </div>
       )}
