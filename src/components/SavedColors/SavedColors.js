@@ -20,7 +20,7 @@ function SavedColors({
           handleDeleteClick(scheme);
         }}
       >
-        Delete Scheme
+        Delete Color Scheme
       </button>
     </li>
   ));
