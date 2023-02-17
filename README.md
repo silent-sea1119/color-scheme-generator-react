@@ -56,6 +56,5 @@ Here, you can view the [Deployed Version](https://aeposten.github.io/color-schem
 
 - Reach Out Via Email - [amy@amyposten.io](mailto:amy@amyposten.io)
 - Connect on Linkedin - [@aeposten](https://www.linkedin.com/in/aeposten/)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 
