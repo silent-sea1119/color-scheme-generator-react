@@ -42,7 +42,7 @@ You will also see any lint errors in the console.
 - CSS custom properties
 - Flexbox
 - [React](https://reactjs.org/) - JS library
-- [LocalStorage] (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [The Color API](https://www.thecolorapi.com/ "The Color API")
 
 ### What I learned
