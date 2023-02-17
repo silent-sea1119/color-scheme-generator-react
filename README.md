@@ -11,7 +11,6 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -52,11 +51,6 @@ The initial version of this project was built using vanilla JavaScript. I enjoye
 
 Here, you can view the [Deployed Version](https://aeposten.github.io/color-scheme-generator/) and [Github Repository](https://github.com/aeposten/color-scheme-generator) for the first version of this project, and below is a screenshot comparing both versions.
 ![Comparison](/screenshots/comparison.png "Comparison")
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
