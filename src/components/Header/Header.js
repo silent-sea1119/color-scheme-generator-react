@@ -5,7 +5,7 @@ function Header({ schemeData, handleChange, toggleMode, mode }) {
   const buttonText = mode === "light" ? "Dark Mode" : "Light Mode";
   return (
     <header className={`header ${mode}`}>
-      <h1>Color Scheme Generator</h1>
+      <h1>Väri <span className="subheading"> - A Color Scheme Generator</span></h1>
       <section className="selects">
         <ColorForm
           schemeData={schemeData}

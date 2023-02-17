@@ -15,6 +15,13 @@ h1 {
   font-weight: normal;
   font-size: 1.5rem;
   text-align: center;
+  font-family: harri, sans-serif;
+  font-weight: bolder;
+}
+
+.subheading {
+  font-family: muli, sans-serif;
+  font-size: 0.75em;
 }
 /* Formatting specific to mode button */
 .mode-btn {

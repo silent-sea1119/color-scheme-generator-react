@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+@import url("https://use.typekit.net/rcz7gsc.css");
 
 /* Variables */
 :root {
@@ -26,8 +26,7 @@
 
 /* General styling for body and main elements*/
 body {
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
+  font-family: muli, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

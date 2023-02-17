@@ -32,8 +32,9 @@ You will also see any lint errors in the console.
 - JavaScript
 - LocalStorage
 - React - with hooks!
+- CSS - Mobile first workflow, 
 - HTML
-- CSS Flexbox
+
 
 ## Author
 
