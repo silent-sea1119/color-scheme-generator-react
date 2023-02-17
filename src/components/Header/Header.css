@@ -13,15 +13,14 @@ h1 {
   margin: 0;
   margin-top: 1rem;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  font-family: harri, sans-serif;
-  font-weight: bolder;
+  font-family: "pauline-didone-variable", sans-serif;
 }
 
 .subheading {
   font-family: muli, sans-serif;
-  font-size: 0.75em;
+  font-size: 0.5em;
 }
 /* Formatting specific to mode button */
 .mode-btn {

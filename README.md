@@ -1,4 +1,4 @@
-<h1 align="center">Color Scheme Generator</h1>
+<h1 align="center">Väri - A Color Scheme Generator</h1>
 
 <p align="center">A ReactJS app that allows the user to generate a color scheme of 5-8 selected colors, based around a color selected by the user. </p>
 
