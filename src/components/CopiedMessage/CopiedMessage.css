@@ -9,3 +9,10 @@
     border-radius: 1.5em;
     box-shadow:  var(--box-shadow);
   }
+
+/* Media queries for responsive styling */
+  @media (max-width: 500px) {
+    .copied-message{
+      bottom: 60%;
+    }
+  }

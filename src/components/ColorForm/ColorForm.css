@@ -20,6 +20,7 @@
 
 .color-form {
   display: flex;
+  align-items: center;
 }
 
 /* Formatting for color selector */
@@ -44,7 +45,7 @@
 }
 
 select {
-  width: 30vw; 
+  width: 30vw;
   margin-bottom: 0.5em;
   padding: 0.5em;
   border: none;
