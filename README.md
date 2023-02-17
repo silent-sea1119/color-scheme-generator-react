@@ -1,6 +1,6 @@
 # väri - A Color Scheme Generator
 
-[väri - A Color Scheme Generator](https://color-scheme-react.netlify.app/)is a React application using the [The Color API](https://www.thecolorapi.com/) that allows the user to save and generate color schemes based on a selected color value.
+[väri - A Color Scheme Generator](https://color-scheme-react.netlify.app/) is a React application using the [The Color API](https://www.thecolorapi.com/) that allows the user to save and generate color schemes based on a selected color value.
 
 ## Table of contents
 
