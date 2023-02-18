@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import Header from "./components/Header/Header";
 import ColorScheme from "./components/ColorScheme/ColorScheme";
-import CopiedMessage from "./components/CopiedMessage/CopiedMessage"
+import CopiedMessage from "./components/CopiedMessage/CopiedMessage";
 import SavedColors from "./components/SavedColors/SavedColors";
 
 import "./App.css";
@@ -17,7 +17,10 @@ function App() {
   });
   const [savedSchemes, setSavedSchemes] = useState(getSavedSchemes());
   const [mode, setMode] = useState("light");
-  const [copied, setCodpied] = useState(false);
+  const [copiedHex, setCopiedHex] = useState({
+    hex: "",
+    copied: false,
+  });
 
   // Change handler for ColorForm
   function handleChange(e) {
@@ -72,7 +75,9 @@ function App() {
   // CLick handler for deleting schemes from localStorage
   function handleDeleteClick(selectedSchemeIndex) {
     setSavedSchemes((prevSavedSchemes) => {
-      return prevSavedSchemes.filter((scheme, index) => index!== selectedSchemeIndex);
+      return prevSavedSchemes.filter(
+        (scheme, index) => index !== selectedSchemeIndex
+      );
     });
   }
 
@@ -87,10 +92,19 @@ function App() {
 
   // Click handler for copying hex to clipboard
   function handleCopyHexClick(hexToCopy) {
+    setCopiedHex((prevCopiedHex) => ({
+      ...prevCopiedHex,
+      hex: hexToCopy,
+      copied: !prevCopiedHex.copied,
+    }));
     navigator.clipboard.writeText(hexToCopy);
-    setCodpied((prevCopied) => !prevCopied);
+
     setTimeout(() => {
-      setCodpied((prevCopied) => !prevCopied);
+      setCopiedHex((prevCopiedHex) => ({
+        ...prevCopiedHex,
+        hex: "",
+        copied: !prevCopiedHex.copied,
+      }));
     }, 1500);
   }
 
@@ -106,7 +120,7 @@ function App() {
         <ColorScheme
           schemeColors={schemeColors}
           handleCopyHexClick={handleCopyHexClick}
-          copied={copied}
+          copied={copiedHex.copied}
         />
         <button className={`btn-${mode}`} onClick={handleSaveSchemeClick}>
           Save Color Scheme
@@ -114,13 +128,13 @@ function App() {
         <SavedColors
           savedSchemes={savedSchemes}
           handleDeleteClick={handleDeleteClick}
-          copied={copied}
+          copied={copiedHex.copied}
           handleCopyHexClick={handleCopyHexClick}
           mode={mode}
         />
       </main>
-      {copied && (
-        <CopiedMessage mode={mode} selectedColor={schemeData.selectedColor}/>
+      {copiedHex.copied && (
+        <CopiedMessage mode={mode} copiedHexValue={copiedHex.hex} />
       )}
     </div>
   );
