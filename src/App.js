@@ -83,11 +83,9 @@ function App() {
 
   // Toggles ligt and darkmode and updates state
   function toggleMode() {
-    if (mode === "light") {
-      setMode((prevMode) => "dark");
-    } else {
-      setMode((prevMode) => "light");
-    }
+    mode === "light"
+      ? setMode((prevMode) => "dark")
+      : setMode((prevMode) => "light");
   }
 
   // Click handler for copying hex to clipboard
