@@ -26,6 +26,7 @@
 - [Project Repository](https://github.com/aeposten/color-scheme-generator-react "Color Scheme Generator Repo")
 
 ### Available Commands
+
 In the project directory, you can run:
 
 ### `npm start" : "react-scripts start"`,
@@ -57,5 +58,5 @@ Here, you can view the [Deployed Version](https://aeposten.github.io/color-schem
 - Reach Out Via Email - [amy@amyposten.io](mailto:amy@amyposten.io)
 - Connect on Linkedin - [@aeposten](https://www.linkedin.com/in/aeposten/)
 - Check Out What I'm Currently Reading :
-<span style="color: #382110">my currently-reading shelf:</span><br/>
-<a href="https://www.goodreads.com/review/list/160857718?shelf=currently-reading" title="Amy Posten's book recommendations, liked quotes, book clubs, book lists (currently-reading shelf)", rel="nofollow"><img border="0" alt="Amy Posten's book recommendations, liked quotes, book clubs, book lists (currently-reading shelf)" src="https://s.gr-assets.com/images/badge/badge1.jpg"></a>
+  <span style="color: #382110">my currently-reading shelf:</span><br/>
+  <a href="https://www.goodreads.com/review/list/160857718?shelf=currently-reading"><img border="0" alt="Amy Posten's book recommendations, liked quotes, book clubs, book lists (currently-reading shelf)" src="https://s.gr-assets.com/images/badge/badge1.jpg"></a>
