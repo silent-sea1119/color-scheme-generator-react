@@ -70,9 +70,9 @@ function App() {
   }, [savedSchemes]);
 
   // CLick handler for deleting schemes from localStorage
-  function handleDeleteClick(selectedScheme) {
+  function handleDeleteClick(selectedSchemeIndex) {
     setSavedSchemes((prevSavedSchemes) => {
-      return prevSavedSchemes.filter((scheme) => scheme !== selectedScheme);
+      return prevSavedSchemes.filter((scheme, index) => index!== selectedSchemeIndex);
     });
   }
 

@@ -17,7 +17,7 @@ function SavedColors({
       <button
         className={`btn-${mode}`}
         onClick={() => {
-          handleDeleteClick(scheme);
+          handleDeleteClick(index);
         }}
       >
         Delete Color Scheme
