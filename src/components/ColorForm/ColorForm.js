@@ -9,7 +9,7 @@ function ColorForm({ schemeData, handleChange, mode }) {
       <input
         type="color"
         id="color-input"
-        className={`color-input select-${mode}`}
+        className={`color-input select-${mode} color-input-${mode}`}
         name="selectedColor"
         value={schemeData.selectedColor}
         onChange={handleChange}

@@ -33,10 +33,14 @@
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
-
-.color-input:hover,
-.color-input:focus {
+.color-input-light:hover,
+.color-input-light:focus {
   border: 0.15em solid var(--dark-grey);
+}
+
+.color-input-dark:hover,
+.color-input-dark:focus {
+  border: 0.15em solid var(--light-grey);
 }
 
 /* Formatting for selects for number of colors and specific scheme */
@@ -81,7 +85,6 @@ select:focus {
 }
 
 @media (max-width: 500px) {
-
   .color-input {
     margin-right: 1em;
   }
