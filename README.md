@@ -11,6 +11,7 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [In Development](#in-development)
 - [Author](#author)
 
 ## Overview
@@ -52,6 +53,12 @@ The initial version of this project was built using vanilla JavaScript. I enjoye
 
 Here, you can view the [Deployed Version](https://aeposten.github.io/color-scheme-generator/) and [Github Repository](https://github.com/aeposten/color-scheme-generator) for the first version of this project, and below is a screenshot comparing both versions.
 ![Comparison](/screenshots/comparison.png "Comparison")
+
+### In Developement
+
+Currently, I am working to implement a feature that allows the user to view photos on the unsplash API that match their selected  color scheme. For a preview of the code check out the [Color-Formula branch](https://github.com/aeposten/color-scheme-generator-react/tree/color-formula), and the below screenshot:
+
+![Preview](/screenshots/preview.png "Preview")
 
 ## Author
 
